@@ -10,5 +10,10 @@ Rails.application.routes.draw do
       post :test_2, :test_4
     end
   end
+    namespace :cypress do
+      delete 'cleanup', to: 'cleanup#destroy'
+      resource :factories, only: %i[create]
+    end
+  end
 
-end
+
